@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { UsersModule } from './users/users.module';
+import { Notification } from './Notifications/Notif.service';
 import { join } from 'path';
 
 @Module({
@@ -29,6 +30,7 @@ import { join } from 'path';
       inject: [ConfigService],
     }),
     UsersModule,
+    Notification,
   ],
   controllers: [AppController],
   providers: [AppService],

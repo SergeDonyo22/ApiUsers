@@ -14,3 +14,5 @@ export class UserService {
     return this.userHistoryRepository.find({ where: { id: userId } });
   }
 }
+
+export { Notification };
