@@ -1,4 +1,4 @@
-import { Notification } from 'src/Notifications/EntitysNotif/notification.entity';
+import { NotificationEntity } from 'src/Notifications/EntitysNotif/notification.entity';
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity({ name: 'users' })
@@ -15,6 +15,6 @@ export class User {
   @Column()
   Age: number;
 
-  @OneToMany(() => Notification, (notification) => notification.user)
-  notifications: Notification[];
+  @OneToMany(() => NotificationEntity, (notification) => notification.user)
+  notifications: NotificationEntity[];
 }

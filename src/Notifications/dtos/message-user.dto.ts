@@ -1,7 +1,6 @@
 import { User } from 'src/users/Entitys/users.entity';
-
-export class CreateUserDto {
+import { NotificationAction } from '../NotifAction.enum';
+export class CreateNotifDto {
   user: User;
-  action: string;
-  createdAt: Date;
+  action: NotificationAction;
 }

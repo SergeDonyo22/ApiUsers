@@ -1,12 +1,13 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { User } from 'src/users/Entitys/users.entity';
-import { UserHistoryController } from './Notif.controller';
-import { UserService } from './Notif.service';
-
+import { NotifController } from './Notif.controller';
+import { NotifService } from './Notif.service';
+import { NotificationEntity } from './EntitysNotif/notification.entity';
+import { UsersModule } from 'src/users/users.module';
 @Module({
-  imports: [TypeOrmModule.forFeature([User])],
-  controllers: [UserHistoryController],
-  providers: [UserService],
+  imports: [TypeOrmModule.forFeature([NotificationEntity]), UsersModule],
+  controllers: [NotifController],
+  providers: [NotifService],
+  exports: [NotifService]
 })
 export class NotifModule {}
